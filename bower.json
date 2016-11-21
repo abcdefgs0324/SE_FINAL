@@ -1,0 +1,21 @@
+{
+  "name": "SE_FINAL",
+  "description": "NCCU Software Engineering Final Project, Fall 2016",
+  "main": "index.js",
+  "authors": [
+    "abcdefgs0324"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "node.js"
+  ],
+  "homepage": "https://github.com/abcdefgs0324/SE_FINAL",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
