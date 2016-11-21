@@ -1,0 +1,32 @@
+{
+  "name": "SE_FINAL",
+  "version": "1.0.0",
+  "description": "NCCU Software Engineering Final Project, Fall 2016",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abcdefgs0324/SE_FINAL.git"
+  },
+  "keywords": [
+    "node.js"
+  ],
+  "author": "abcdefgs0324",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/abcdefgs0324/SE_FINAL/issues"
+  },
+  "homepage": "https://github.com/abcdefgs0324/SE_FINAL#readme",
+  "dependencies": {
+    "express": "^4.14.0",
+    "socket.io": "^1.6.0"
+  },
+  "devDependencies": {
+    "bower": "^1.8.0",
+    "gulp": "^3.9.1",
+    "gulp-connect": "^5.0.0"
+  }
+}
