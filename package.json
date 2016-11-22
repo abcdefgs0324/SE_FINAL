@@ -27,7 +27,10 @@
   "devDependencies": {
     "bower": "^1.8.0",
     "gulp": "^3.9.1",
-    "gulp-connect": "^5.0.0"
+    "gulp-connect": "^5.0.0",
+    "gulp-jade": "^1.1.0",
+    "gulp-jshint": "^2.0.4",
+    "jade": "^1.11.0"
   },
   "jshintConfig": {
     "undef": true,
