@@ -1,14 +1,23 @@
 doctype html
 html
     head
-        meta(charset='utf-8')
+        meta(charset="utf-8")
         title NCCU SE Final
-        link(rel='stylesheet', href='static/css/index.css')
-    body(ng-app='reportApp')
+        <!--link(rel="stylesheet", href="static/css/index.css")-->
+    body(ng-app="policeApp")
         h1 Hello NCCU
         .wrapper
-            script(src='app/app.js')
-            script(src='app/report/report.js')
-            script(src='app/report/report.controller.js')
-            script(src='app/reconciliation/reconciliation.js')
-            script(src='app/reconciliation/reconciliation.controller.js')
+            <!--div(ng-include="'components/navbar/navbar.html'")-->
+            md-card-content(flex)
+                div(ui-view="")
+            <!--div(ng-include="'components/footer/footer.html'")-->
+            script(src="bower_components/angular/angular.js")
+            script(src="bower_components/angular-ui-router/release/angular-ui-router.js")
+            script(src="app/app.js")
+            script(src="app/login/login.js")
+            script(src="app/login/login.controller.js")
+            script(src="app/report/report.js")
+            script(src="app/report/report.controller.js")
+            script(src="app/reconciliation/reconciliation.js")
+            script(src="app/reconciliation/reconciliation.controller.js")
+            script(src="function/transfer/transfer.js")
