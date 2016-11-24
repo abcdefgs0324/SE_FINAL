@@ -13,4 +13,7 @@ app.config(function ($stateProvider) {
                         '<div> Test Test</div>' +
                       '<div>Thanks</div>'
         };
+    })
+    .run(function (transfer) {
+        transfer.go('login');
     });
