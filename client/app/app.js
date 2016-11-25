@@ -1,6 +1,9 @@
 'use strict';
 
 var app = angular.module('policeApp', [
+    'ngAria',
+    'ngAnimate',
+    'ngMaterial',
     'ui.router',
 ]);
 var PATHNAME = window.location.pathname;

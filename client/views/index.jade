@@ -6,6 +6,7 @@ html
         <!--link(rel="stylesheet", href="static/css/index.css")-->
         link(rel="stylesheet", href="static/css/navbar.css")
         link(rel="stylesheet", href="static/css/footer.css")
+        link(rel="stylesheet", href="bower_components/angular-material/angular-material.css")
     body(ng-app="policeApp")
         h1 Hello NCCU
         .wrapper
@@ -14,6 +15,10 @@ html
                 div(ui-view="")
             div(ng-include="'components/footer/footer.html'")
             script(src="bower_components/angular/angular.js")
+            script(src="bower_components/angular-aria/angular-aria.js")
+            script(src="bower_components/angular-animate/angular-animate.js")
+            script(src="bower_components/angular-material/angular-material.js")
+            script(src="bower_components/angular-messages/angular-messages.js")
             script(src="bower_components/angular-ui-router/release/angular-ui-router.js")
             script(src="app/app.js")
             script(src="app/login/login.js")
