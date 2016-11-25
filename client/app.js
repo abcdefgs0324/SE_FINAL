@@ -11,6 +11,7 @@ app.get('/', function(req, res) {
 app.use('/bower_components', express.static(__dirname + '/bower_components'));
 app.use('/app', express.static(__dirname + '/app'));
 app.use('/function', express.static(__dirname + '/function'));
+app.use('/components', express.static(__dirname + '/components'));
 
 http.listen(process.env.PORT || 3000, function() {
     console.log('listening on *:3000');

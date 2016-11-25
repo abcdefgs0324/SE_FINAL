@@ -7,10 +7,10 @@ html
     body(ng-app="policeApp")
         h1 Hello NCCU
         .wrapper
-            <!--div(ng-include="'components/navbar/navbar.html'")-->
+            div(ng-include="'components/navbar/navbar.html'")
             md-card-content(flex)
                 div(ui-view="")
-            <!--div(ng-include="'components/footer/footer.html'")-->
+            div(ng-include="'components/footer/footer.html'")
             script(src="bower_components/angular/angular.js")
             script(src="bower_components/angular-ui-router/release/angular-ui-router.js")
             script(src="app/app.js")
