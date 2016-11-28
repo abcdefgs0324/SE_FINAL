@@ -1,0 +1,6 @@
+div(ng-controller="HomeCtrl")
+    div(layout="row" layout-align="center" style="margin-top: 3%;")
+        div(ng-repeat="item in homeItems" style="text-align:center;")
+            div(layout="column" layout-align="center")
+                md-button(class="md-primary" ng-click="goApp(item.destination)" ng-disabled="item.disabled" aria-label="{{ item.title }}" style="min-width:200px;") {{ item.title }}
+                    md-tooltip {{item.description}}
