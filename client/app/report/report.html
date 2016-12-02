@@ -1,7 +1,7 @@
 
 <div ng-controller="ReportCtrl">
   <div flex="flex" layout="row" layout-align="center">
-    <md-tabs md-dynamic-height="md-dynamic-height" md-selected="tabSelected" style="width:80%; margin-top:3%; margin-left:10%; margin-right:10%;">
+    <md-tabs md-dynamic-height="md-dynamic-height" md-selected="tabSelected" style="width:80%; margin-top:3%; margin-left:10%; margin-right:10%;" flex="flex">
       <md-tab id="tab1">
         <md-tab-label>Identity</md-tab-label>
         <md-tab-body>
@@ -19,12 +19,6 @@
                 <input type="text" ng-model="otherPlate" aria-label="other license plate"/>
               </md-input-container>
             </div>
-            <div layout="column">
-              <md-input-container>
-                <label>事故地點</label>
-                <input type="text" ng-model="accidentPlace" aria-label="accident place"/>
-              </md-input-container>
-            </div>
           </div>
           <div flex="flex" layout-align="center">
             <md-button ng-click="stepTwo()" class="md-raised">下一步</md-button>
@@ -36,6 +30,24 @@
         <md-tab-body>
           <h3>雙方行為</h3>
           <div>
+            <div layout="column">
+              <md-input-container>
+                <label>事故地點</label>
+                <input type="text" ng-model="place" aria-label="accident place"/>
+              </md-input-container>
+            </div>
+            <div layout="column">
+              <md-input-container>
+                <label>事故日期</label>
+                <input time="false" date="true" mdc-datetime-picker="" type="text" ng-model="date" disabled="disabled" class=" md-input"/>
+              </md-input-container>
+            </div>
+            <div layout="column">
+              <md-input-container>
+                <label>事故時間</label>
+                <input mdc-datetime-picker="" date="false" time="true" type="text" format="HH:mm" ng-model="time" class=" md-input"/>
+              </md-input-container>
+            </div>
             <div layout="column">
               <md-input-container>
                 <label>對方駕駛行為</label>
@@ -99,7 +111,19 @@
             <div layout="column">
               <md-input-container>
                 <label>其他密切狀況</label>
-                <input type="text" ng-model="allOthers" aria-label="all other else"/>
+                <input type="text" ng-model="otherCond" aria-label="all other else"/>
+              </md-input-container>
+            </div>
+            <div layout="column">
+              <md-input-container>
+                <label>留存照片</label>
+                <input type="url" ng-model="photo" aria-label="remained photo"/>
+              </md-input-container>
+            </div>
+            <div layout="column">
+              <md-input-container>
+                <label>備註</label>
+                <input type="text" ng-model="notes" aria-label="all other else about accident"/>
               </md-input-container>
             </div>
           </div>

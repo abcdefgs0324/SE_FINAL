@@ -7,6 +7,7 @@ angular.module('policeApp')
         $scope.twoDisabled = true;
         $scope.threeDisabled = true;
         $scope.fourDisabled = true;
+        $scope.date = new Date();
 
         $scope.stepOne = function() {
             $scope.tabSelected = 0;

@@ -5,6 +5,7 @@ var app = angular.module('policeApp', [
     'ngAnimate',
     'ngMaterial',
     'ui.router',
+    'ngMaterialDatePicker',
 ]);
 var PATHNAME = window.location.pathname;
 
