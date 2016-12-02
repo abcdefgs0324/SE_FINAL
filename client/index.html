@@ -14,8 +14,8 @@
   <body ng-app="policeApp">
     <div class="wrapper">
       <div ng-include="'components/navbar/navbar.html'"></div>
-      <md-card-content flex>
-        <div ui-view=""></div>
+      <md-card-content flex style="overflow:auto">
+        <div ui-view="" style="padding-bottom:15%;"></div>
       </md-card-content>
       <div ng-include="'components/footer/footer.html'"></div>
       <script src="bower_components/jquery/dist/jquery.js"></script>
@@ -36,6 +36,8 @@
       <script src="app/report/report.controller.js"></script>
       <script src="app/reconciliation/reconciliation.js"></script>
       <script src="app/reconciliation/reconciliation.controller.js"></script>
+      <script src="app/record/record.js"></script>
+      <script src="app/record/record.controller.js"></script>
       <script src="function/transfer/transfer.js"></script>
     </div>
   </body>

@@ -14,8 +14,8 @@ html
     body(ng-app="policeApp")
         .wrapper
             div(ng-include="'components/navbar/navbar.html'")
-            md-card-content(flex)
-                div(ui-view="")
+            md-card-content(flex style="overflow:auto")
+                div(ui-view="" style="padding-bottom:15%;")
             div(ng-include="'components/footer/footer.html'")
             script(src="bower_components/jquery/dist/jquery.js")
             script(src="bower_components/angular/angular.js")
@@ -35,4 +35,6 @@ html
             script(src="app/report/report.controller.js")
             script(src="app/reconciliation/reconciliation.js")
             script(src="app/reconciliation/reconciliation.controller.js")
+            script(src="app/record/record.js")
+            script(src="app/record/record.controller.js")
             script(src="function/transfer/transfer.js")
