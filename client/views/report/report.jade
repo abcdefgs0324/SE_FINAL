@@ -15,6 +15,7 @@ div(ng-controller="ReportCtrl")
                                 label 對方車牌號碼
                                 input(type="text" ng-model="otherPlate" aria-label="other license plate")
                     div(flex layout-align="center")
+                        md-button(class="md-raised" ng-click="goApp('home')") 回上一頁
                         md-button(class="md-raised" ng-click="stepTwo()") 下一步
             md-tab(id="tab2" ng-disabled="twoDisabled")
                 md-tab-label Condition
