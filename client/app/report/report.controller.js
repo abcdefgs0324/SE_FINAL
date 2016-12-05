@@ -76,6 +76,7 @@ angular.module('policeApp')
 
             console.log('done');
             console.log(settings);
+            $scope.goApp('home');
         };
 
         $scope.goApp = function (targetPage) {
