@@ -3,6 +3,9 @@
 var express = require('express');
 var app = express();
 var http = require('http').Server(app);
+var bodyParser = require('body-parser');
+
+app.use(bodyParser.json());
 
 app.get('/', function(req, res) {
     res.sendFile(__dirname + '/index.html');
