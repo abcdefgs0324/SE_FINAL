@@ -1,7 +1,8 @@
 'use strict';
 
 angular.module('policeApp')
-    .controller('ReconciliationCtrl', [ '$scope', 'transfer', function ($scope, transfer) {
+    .controller('LoginCtrl', [ '$scope', 'transfer', function ($scope, transfer) {
+        $scope.logging = false;
 
         $scope.goApp = function (targetPage) {
             transfer.go(targetPage);

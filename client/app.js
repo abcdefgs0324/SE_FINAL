@@ -1,16 +1,24 @@
 'use strict';
 
-var app = require('express')();
+var express = require('express');
+var app = express();
 var http = require('http').Server(app);
 
 app.get('/', function(req, res) {
     res.sendFile(__dirname + '/index.html');
 });
 
+app.use('/bower_components', express.static(__dirname + '/bower_components'));
+app.use('/app', express.static(__dirname + '/app'));
+app.use('/function', express.static(__dirname + '/function'));
+app.use('/components', express.static(__dirname + '/components'));
+app.use('/static', express.static(__dirname + '/static'));
+
 http.listen(process.env.PORT || 3000, function() {
     console.log('listening on *:3000');
 });
 
+<<<<<<< HEAD
 // 用於處理路徑
 var path = require('path')
 
@@ -177,3 +185,6 @@ app.get('/userdata', function(req, res){
                                   })
                  
                  })
+=======
+exports = module.exports = app;
+>>>>>>> dd81dfdac90df3773a528794d568c63c83a8f336

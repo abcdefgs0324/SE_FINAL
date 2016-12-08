@@ -1,0 +1,17 @@
+/* footer.css */
+
+footer {
+	background-color:#666;
+	overflow:hidden;
+	padding:0;
+	margin:0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+footer p {
+	color: orange;
+	font-weight: bold;
+	font-size: 0.87em;
+}

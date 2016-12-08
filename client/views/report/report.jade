@@ -1,0 +1,94 @@
+div(ng-controller="ReportCtrl")
+    div(flex layout="row" layout-align="center")
+        md-tabs(class="" md-dynamic-height md-selected="tabSelected" style="width:80%; margin-top:3%; margin-left:10%; margin-right:10%;" flex)
+            md-tab(id="tab1")
+                md-tab-label Identity
+                md-tab-body
+                    h3 雙方身分
+                    div
+                        div(layout="column")
+                            md-input-container
+                                label 你的車牌號碼
+                                input(type="text" ng-model="myPlate" aria-label="my license plate")
+                        div(layout="column")
+                            md-input-container
+                                label 對方車牌號碼
+                                input(type="text" ng-model="otherPlate" aria-label="other license plate")
+                    div(flex layout-align="center")
+                        md-button(class="md-raised" ng-click="goApp('home')") 回上一頁
+                        md-button(class="md-raised" ng-click="stepTwo()") 下一步
+            md-tab(id="tab2" ng-disabled="twoDisabled")
+                md-tab-label Condition
+                md-tab-body
+                    h3 雙方行為
+                    div
+                        div(layout="column")
+                            md-input-container
+                                label 事故地點
+                                input(type="text" ng-model="place" aria-label="accident place")
+                        div(layout="column")
+                            md-input-container
+                                label 事故日期
+                                input(time="false" date="true" mdc-datetime-picker="" type="text"
+                                      ng-model="date" class=" md-input" disabled)
+                        div(layout="column")
+                            md-input-container
+                                label 事故時間
+                                input(mdc-datetime-picker="" date="false" time="true" type="text" 
+                                      format="HH:mm" ng-model="time" class=" md-input")
+                        div(layout="column")
+                            md-input-container
+                                label 對方駕駛行為
+                                input(type="text" ng-model="otherBehavior" aria-label="other behavior")
+                        div(layout="column")
+                            md-input-container
+                                label 本身採取動作
+                                input(type="text" ng-model="myBehavior" aria-label="my behavior")
+                        div(layout="column")
+                            md-input-container
+                                label 雙方車速車況
+                                input(type="text" ng-model="speed" aria-label="speed")
+                    div(flex layout-align="center")
+                        md-button(class="md-raised" ng-click="stepOne()") 上一步
+                        md-button(class="md-raised" ng-click="stepThree()") 下一步
+            md-tab(id="tab3" ng-disabled="threeDisabled")
+                md-tab-label Road
+                md-tab-body
+                    h3 外在狀況
+                    div
+                        div(layout="column")
+                            md-input-container
+                                label 實際道路狀況
+                                input(type="text" ng-model="road" aria-label="road condition")
+                        div(layout="column")
+                            md-input-container
+                                label 號誌與標線情形
+                                input(type="text" ng-model="sign" aria-label="road sign")
+                    div(flex layout-align="center")
+                        md-button(class="md-raised" ng-click="stepTwo()") 上一步
+                        md-button(class="md-raised" ng-click="stepFour()") 下一步
+            md-tab(id="tab4" ng-disabled="fourDisabled")
+                md-tab-label Result
+                md-tab-body
+                    h3 事件結果
+                    div
+                        div(layout="column")
+                            md-input-container
+                                label 車輛損壞、人員受傷情形
+                                input(type="text" ng-model="broken" aria-label="broken result")
+                        div(layout="column")
+                            md-input-container
+                                label 其他密切狀況
+                                input(type="text" ng-model="otherCond" aria-label="all other else")
+                        div(layout="column")
+                            md-input-container
+                                label 留存照片
+                                input(type="url" ng-model="photo" aria-label="remained photo")
+                        div(layout="column")
+                            md-input-container
+                                label 備註
+                                input(type="text" ng-model="notes" aria-label="all other else about accident")
+                    div(flex layout-align="center")
+                        md-button(class="md-raised" ng-click="stepThree()") 上一步
+                        md-button(class="md-raised" ng-click="done()") 完成筆錄
+                    

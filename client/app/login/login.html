@@ -1,0 +1,21 @@
+
+<div ng-controller="LoginCtrl">
+  <div flex="flex" layout="row" layout-align="center" style="margin-top: 3%">
+    <div flex="30" layout="column">
+      <div layout="column">
+        <md-input-container>
+          <label>Username</label>
+          <md-icon class="md-primary fa fa-user"></md-icon>
+          <input type="text" ng-model="username"/>
+        </md-input-container>
+        <md-input-container>
+          <label>Password</label>
+          <md-icon class="md-primary fa fa-lock"></md-icon>
+          <input type="password" ng-model="password"/>
+        </md-input-container>
+        <md-button ng-if="!logging" ng-click="goApp('home')" class="md-primary">Login</md-button>
+        <md-button ng-if="!logging" ng-click="goApp('signup')" class="md-primary">Signup</md-button>
+      </div>
+    </div>
+  </div>
+</div>
