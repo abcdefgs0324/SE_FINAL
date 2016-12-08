@@ -35,11 +35,5 @@
     "gulp-sass": "^2.3.2",
     "jade": "^1.11.0",
     "jshint-stylish": "^2.2.1"
-  },
-  "jshintConfig": {
-    "undef": true,
-    "unused": true,
-    "strict": true,
-    "newcap": true
   }
 }

@@ -7,9 +7,8 @@ var app = angular.module('policeApp', [
     'ui.router',
     'ngMaterialDatePicker',
 ]);
-var PATHNAME = window.location.pathname;
 
-app.config(function ($stateProvider) {
+app.config(function () {
     })
     .directive('banner', function () {
         return {

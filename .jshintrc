@@ -1,0 +1,11 @@
+{
+    "undef": true,
+    "unused": true,
+    "strict": true,
+    "node": true,
+    "newcap": true,
+    "globals": {
+        "angular": false,
+        "console": false
+    }
+}

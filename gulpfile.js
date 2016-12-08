@@ -26,7 +26,7 @@ gulp.task('jadeOther', function() {
         .pipe(gulp.dest('client/app/'));
 });
 
-gulp.task('jshint', function() {
+gulp.task('lint', function() {
     return gulp.src('client/app/**/*.js')
         .pipe(jshint())
         .pipe(jshint.reporter('jshint-stylish'));
