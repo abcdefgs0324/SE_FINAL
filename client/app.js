@@ -21,7 +21,6 @@ http.listen(process.env.PORT || 3000, function() {
     console.log('listening on *:3000');
 });
 
-<<<<<<< HEAD
 // 用於處理路徑
 var path = require('path')
 
@@ -188,6 +187,6 @@ app.get('/userdata', function(req, res){
                                   })
                  
                  })
-=======
+
 exports = module.exports = app;
->>>>>>> dd81dfdac90df3773a528794d568c63c83a8f336
+
