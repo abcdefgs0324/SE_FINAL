@@ -4,16 +4,15 @@ var express = require('express');
 var app = express();
 var http = require('http').Server(app);
 var bodyParser = require('body-parser');
-
-// 用於處理路徑
 var path = require('path');
+
 // import 同目錄的 eventEmitter.js
-var eventEmitter = require('./eventEmitter.js');
+var eventEmitter = require('./web3/eventEmitter.js');
 // import 同目錄的 web3.js
-var web3 = require('./web3.js');
+var web3 = require('./web3/web3.js');
 var eth = web3.eth;
 // import 同目錄的 bank
-var BumbCase = require('./BumbCase.js');
+var BumbCase = require('./web3/BumbCase.js');
 
 app.use(bodyParser.json());
 app.use('/bower_components', express.static(__dirname + '/bower_components'));
