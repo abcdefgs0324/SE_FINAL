@@ -1,7 +1,7 @@
 pragma solidity ^0.4.0;
 contract BumbCase {
     
-     event NewCaseEvent(address from);
+    event NewCaseEvent(address from);
     
     struct bumbcase{ 
         uint id;
