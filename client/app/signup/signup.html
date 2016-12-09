@@ -6,19 +6,19 @@
         <md-input-container>
           <label>Username</label>
           <md-icon class="md-primary fa fa-user"></md-icon>
-          <input type="text" ng-model="username"/>
+          <input type="text" ng-model="newUsername"/>
         </md-input-container>
         <md-input-container>
           <label>Password</label>
           <md-icon class="md-primary fa fa-lock"></md-icon>
-          <input type="password" ng-model="password"/>
+          <input type="password" ng-model="newPassword"/>
         </md-input-container>
         <md-input-container>
           <label>CellPhone</label>
           <md-icon class="md-primary fa fa-phone"></md-icon>
-          <input type="text" ng-model="cellphone"/>
+          <input type="text" ng-model="newPhone"/>
         </md-input-container>
-        <md-button ng-if="!logging" ng-click="goApp('home')" class="md-primary">註冊</md-button>
+        <md-button ng-if="!logging" ng-click="signup()" class="md-primary">註冊</md-button>
       </div>
     </div>
   </div>

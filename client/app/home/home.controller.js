@@ -1,7 +1,9 @@
+/*global nowUser*/
+
 'use strict';
 
 angular.module('policeApp')
-    .controller('HomeCtrl', [ '$scope', 'transfer', function ($scope, transfer) {
+    .controller('HomeCtrl', [ '$scope', 'transfer', 'dialog', function ($scope, transfer, dialog) {
 
         $scope.homeItems = [{
             title: '筆錄紀錄',
@@ -14,6 +16,15 @@ angular.module('policeApp')
             destination: 'report',
             disabled: false
         }];
+
+        $scope.logout = function () {
+            dialog.confirm('CONFIRM', 'Do you want to log out?')
+                .then(function () {
+                    nowUser = null;
+                    console.log('Success: logout');
+                    $scope.goApp('login');
+                });
+        };
 
         $scope.goApp = function (targetPage) {
             transfer.go(targetPage);

@@ -10,6 +10,6 @@ div(ng-controller="LoginCtrl")
                     label Password
                     md-icon(class="md-primary fa fa-lock")
                     input(type="password" ng-model="password")
-                md-button(ng-if="!logging" class="md-primary" ng-click="goApp('home')") Login
+                md-button(ng-if="!logging" class="md-primary" ng-click="login()") Login
                 md-button(ng-if="!logging" class="md-primary" ng-click="goApp('signup')") Signup
 

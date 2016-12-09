@@ -8,6 +8,21 @@ var app = angular.module('policeApp', [
     'ngMaterialDatePicker',
 ]);
 
+var nowUser = null;
+var loginList = [{
+    username: 'liGG',
+    password: '12345',
+    cellphone: '110'
+}, {
+    username: 'dog',
+    password: '12345',
+    cellphone: '119'
+}, {
+    username: 'apple',
+    password: '12345',
+    cellphone: '113'
+}];
+
 app.config(function () {
     })
     .directive('banner', function () {

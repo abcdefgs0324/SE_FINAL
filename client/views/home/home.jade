@@ -5,4 +5,4 @@ div(ng-controller="HomeCtrl")
                 md-button(class="md-primary" ng-click="goApp(item.destination)" ng-disabled="item.disabled" aria-label="{{ item.title }}" style="min-width:200px;") {{ item.title }}
                     md-tooltip {{item.description}}
     div(layout="column" layout-align="center")
-        md-button(class="md-primary" ng-click="goApp('login')" aria-label="log out" style="min-width:200px;") Logout
+        md-button(class="md-primary" ng-click="logout()" aria-label="log out" style="min-width:200px;") Logout
