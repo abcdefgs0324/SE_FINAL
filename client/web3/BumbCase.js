@@ -20,4 +20,4 @@ var bumbcase = bumbcaseContract.new({
     });
 
 
-module.exports = BumbCase;
+module.exports = bumbcase;
