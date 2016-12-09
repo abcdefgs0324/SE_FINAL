@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('policeApp')
-    .controller('ReportCtrl', [ '$scope', 'transfer', function ($scope, transfer) {
+    .controller('ReportCtrl', [ '$scope', '$http', 'transfer', function ($scope, $http, transfer) {
 
         $scope.tabSelected = 0;
         $scope.twoDisabled = true;
@@ -73,6 +73,16 @@ angular.module('policeApp')
                     notes: $scope.notes
                 }
             };
+
+            $http({
+                url: '/postdata',
+                method: 'POST',
+                data: settings
+            })
+            .success(function (res) {
+                console.log('res:');
+                console.log(res);
+            });
 
             console.log('done');
             console.log(settings);
