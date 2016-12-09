@@ -1,5 +1,5 @@
-/*global loginList*/
-/*global nowUser*/
+/*global loginList:true*/
+/*global nowUser:true*/
 
 'use strict';
 
@@ -18,7 +18,7 @@ angular.module('policeApp')
                     username: $scope.newUsername,
                     password: $scope.newPassword,
                     cellphone: $scope.newPhone
-                }
+                };
                 nowUser = $scope.username;
                 console.log('Success: create a new user');
                 console.log(newUser);

@@ -1,5 +1,5 @@
-/*global loginList*/
-/*global nowUser*/
+/*global loginList:true*/
+/*global nowUser:true*/
 
 'use strict';
 
@@ -17,7 +17,7 @@ angular.module('policeApp')
                     $scope.goApp('home');
                 }
             }
-            if (loginSuccess == false) {
+            if (!loginSuccess) {
                 dialog.alert('Failed', 'User ' + $scope.username + ' not exists or password is wrong');
                 console.log('Error: there is not the user ' + $scope.username);
             }

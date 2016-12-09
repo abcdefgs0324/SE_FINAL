@@ -1,4 +1,4 @@
-/*global nowUser*/
+/*global nowUser:true*/
 
 'use strict';
 
