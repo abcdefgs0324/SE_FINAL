@@ -8,8 +8,8 @@ angular.module('policeApp')
         $scope.threeDisabled = true;
         $scope.fourDisabled = true;
 
-        $scope.id = "";
-        $scope.recordNum = "";
+        $scope.id = "0"; // temp
+        $scope.recordNum = "0"; // temp
         $scope.myPlate = "";
         $scope.otherPlate = "";
         $scope.place = "";
@@ -82,6 +82,10 @@ angular.module('policeApp')
             .success(function (res) {
                 console.log('res:');
                 console.log(res);
+            })
+            .error(function (e) {
+                console.log('Error:');
+                console.log(e);
             });
 
             console.log('done');

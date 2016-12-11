@@ -13,6 +13,10 @@ angular.module('policeApp')
         .success(function (res) {
             console.log('res:');
             console.log(res);
+        })
+        .error(function (e) {
+            console.log('Error:');
+            console.log(e);
         });
 
         $scope.goApp = function (targetPage) {
