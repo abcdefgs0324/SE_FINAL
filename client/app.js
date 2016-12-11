@@ -11,8 +11,8 @@ var eventEmitter = require('./web3/eventEmitter.js');
 // import 同目錄的 web3.js
 var web3 = require('./web3/web3.js');
 var eth = web3.eth;
-// import 同目錄的 bank
-var BumbCase = require('./web3/BumbCase.js');
+// import 同目錄的 bumbcase
+var bumbcase = require('./web3/BumbCase.js');
 
 app.use(bodyParser.json());
 app.use('/bower_components', express.static(__dirname + '/bower_components'));
@@ -33,71 +33,72 @@ http.listen(process.env.PORT || 3000, function() {
 
 app.get('/userdata', function(req, res){
     var user = req.query.id;
-    bank.returnid({
+    // user = web3.eth.accounts[0];
+    bumbcase.returnid({
         from: user
     }, function(err, rid) {
         if(!err) {
-            bank.returnrecordNum({
+            bumbcase.returnrecordNum({
                 from: user
             }, function(err, rrecordNum) {
                 if(!err) {
-                    bank.returnmyPlate({
+                    bumbcase.returnmyPlate({
                         from: user
                     }, function(err,rmyPlate) {
                         if(!err) {
-                            bank.returnotherPlate({
+                            bumbcase.returnotherPlate({
                                 from: user
                             }, function(err, rotherPlate) {
                                 if(!err) {
-                                    bank.returncondition({
+                                    bumbcase.returncondition({
                                         from: user
                                     }, function(err, rcondition) {
                                         if(!err) {
-                                            bank.returndate({
+                                            bumbcase.returndate({
                                                 from: user
                                             }, function(err, rdate) {
                                                 if(!err) {
-                                                    bank.returntime({
+                                                    bumbcase.returntime({
                                                         from: user
                                                     }, function(err, rtime) {
                                                         if(!err) {
-                                                            bank.returnplace({
+                                                            bumbcase.returnplace({
                                                                 from: user
                                                             }, function(err, rplace) {
                                                                 if(!err) {
-                                                                    bank.returnotherBehavior({
+                                                                    bumbcase.returnotherBehavior({
                                                                         from: user
                                                                     }, function(err, rotherBehavior) {
                                                                         if(!err) {
-                                                                            bank.returnmyBehavior({
+                                                                            bumbcase.returnmyBehavior({
                                                                                 from: user
                                                                             }, function(err, rmyBehavior) {
                                                                                 if(!err) {
-                                                                                    bank.returnspeed({
+                                                                                    bumbcase.returnspeed({
                                                                                         from: user
                                                                                     }, function(err, rspeed) {
                                                                                         if(!err) {
-                                                                                            bank.returnroad({
+                                                                                            bumbcase.returnroad({
                                                                                                 from: user
                                                                                             }, function(err, rroad) {
                                                                                                 if(!err) {
-                                                                                                    bank.returnsign({
+                                                                                                    bumbcase.returnsign({
                                                                                                         from: user
                                                                                                     }, function(err, rsign) {
                                                                                                         if(!err) {
-                                                                                                            bank.returnbroken({
+                                                                                                            bumbcase.returnbroken({
                                                                                                                 from: user
                                                                                                             }, function(err, rbroken) {
                                                                                                                 if(!err) {
-                                                                                                                    bank.returnotherCond({
+                                                                                                                    bumbcase.returnotherCond({
                                                                                                                         from: user
                                                                                                                     }, function(err, rotherCond) {
                                                                                                                         if(!err) {
-                                                                                                                            bank.returnphoto({
+                                                                                                                            bumbcase.returnphoto({
                                                                                                                                 from: user
                                                                                                                             }, function(err, rphoto) {
                                                                                                                                 if(!err) {
-                                                                                                                                    bank.returnnotes({
+                                                                                                                                    bumbcase.returnnotes({
                                                                                                                                         from: user
                                                                                                                                     }, function(err, rnotes) {
                                                                                                                                         if(!err) {
@@ -167,7 +168,8 @@ app.get('/userdata', function(req, res){
 
 app.post('/postdata', function(req, res) {
     var user = req.query.id;
-    BumbCase.NewCase(user, req.query.myPlate, req.query.otherPlate, req.query.condition, req.query.date, req.query.time, req.query.place, req.query.otherBehavior, req.query.myBehavior, req.query.speed, req.query.road, req.query.sign, req.query.broken, req.query.otherCond, req.query.photo, req.query.notes, {
+    // user = web3.eth.accounts[0];
+    bumbcase.NewCase(user, req.query.myPlate, req.query.otherPlate, req.query.condition, req.query.date, req.query.time, req.query.place, req.query.otherBehavior, req.query.myBehavior, req.query.speed, req.query.road, req.query.sign, req.query.broken, req.query.otherCond, req.query.photo, req.query.notes, {
         from: user,
         gas: 4600000
     }, function(err, txhash) {
