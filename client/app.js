@@ -15,6 +15,9 @@ var eth = web3.eth;
 var bumbcase = require('./web3/BumbCase.js');
 
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({
+    extended: true
+}));
 app.use('/bower_components', express.static(__dirname + '/bower_components'));
 app.use('/app', express.static(__dirname + '/app'));
 app.use('/function', express.static(__dirname + '/function'));
@@ -26,14 +29,17 @@ app.get('/', function(req, res) {
     res.sendFile(__dirname + '/index.html');
 });
 
+/*
 http.listen(process.env.PORT || 3000, function() {
     console.log('listening on *:3000');
 });
+*/
+http.listen(3030);
 
 
 app.get('/userdata', function(req, res){
     var user = req.query.id;
-    // user = web3.eth.accounts[0];
+    user = web3.eth.accounts[0];
     bumbcase.returnid({
         from: user
     }, function(err, rid) {
@@ -168,7 +174,7 @@ app.get('/userdata', function(req, res){
 
 app.post('/postdata', function(req, res) {
     var user = req.query.id;
-    // user = web3.eth.accounts[0];
+    user = web3.eth.accounts[0];
     bumbcase.NewCase(user, req.query.myPlate, req.query.otherPlate, req.query.condition, req.query.date, req.query.time, req.query.place, req.query.otherBehavior, req.query.myBehavior, req.query.speed, req.query.road, req.query.sign, req.query.broken, req.query.otherCond, req.query.photo, req.query.notes, {
         from: user,
         gas: 4600000

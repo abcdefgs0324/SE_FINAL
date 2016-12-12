@@ -1,4 +1,81 @@
 div(ng-controller="RecordCtrl")
     div(flex layout="row" layout-align="center")
+        md-tabs(class="" md-dynamic-height md-selected="tabSelected" style="width:80%; margin-top:3%; margin-left:10%; margin-right:10%;" flex)
+            md-tab(id="tab1")
+                md-tab-label Identity
+                md-tab-body
+                    h3 雙方身分
+                    div
+                        div(layout="column")
+                            md-input-container
+                                label 你的車牌號碼
+                                input(type="text" ng-model="settings.identity.myPlate" aria-label="my license plate" disabled)
+                        div(layout="column")
+                            md-input-container
+                                label 對方車牌號碼
+                                input(type="text" ng-model="settings.identity.otherPlate" aria-label="other license plate" disabled)
+            md-tab(id="tab2")
+                md-tab-label Condition
+                md-tab-body
+                    h3 雙方行為
+                    div
+                        div(layout="column")
+                            md-input-container
+                                label 事故地點
+                                input(type="text" ng-model="settings.condition.place" aria-label="accident place" disabled)
+                        div(layout="column")
+                            md-input-container
+                                label 事故日期
+                                input(type="text" ng-model="settings.condition.date" disabled)
+                        div(layout="column")
+                            md-input-container
+                                label 事故時間
+                                input(type="text" format="HH:mm" ng-model="settings.condition.time" disabled)
+                        div(layout="column")
+                            md-input-container
+                                label 對方駕駛行為
+                                input(type="text" ng-model="settings.condition.otherBehavior" aria-label="other behavior" disabled)
+                        div(layout="column")
+                            md-input-container
+                                label 本身採取動作
+                                input(type="text" ng-model="settings.condition.myBehavior" aria-label="my behavior" disabled)
+                        div(layout="column")
+                            md-input-container
+                                label 雙方車速車況
+                                input(type="text" ng-model="settings.condition.speed" aria-label="speed" disabled)
+            md-tab(id="tab3")
+                md-tab-label Road
+                md-tab-body
+                    h3 外在狀況
+                    div
+                        div(layout="column")
+                            md-input-container
+                                label 實際道路狀況
+                                input(type="text" ng-model="settings.extFactor.road" aria-label="road condition" disabled)
+                        div(layout="column")
+                            md-input-container
+                                label 號誌與標線情形
+                                input(type="text" ng-model="settings.extFactor.sign" aria-label="road sign" disabled)
+            md-tab(id="tab4")
+                md-tab-label Result
+                md-tab-body
+                    h3 事件結果
+                    div
+                        div(layout="column")
+                            md-input-container
+                                label 車輛損壞、人員受傷情形
+                                input(type="text" ng-model="settings.result.broken" aria-label="broken result" disabled)
+                        div(layout="column")
+                            md-input-container
+                                label 其他密切狀況
+                                input(type="text" ng-model="settings.result.otherCond" aria-label="all other else" disabled)
+                        div(layout="column")
+                            md-input-container
+                                label 留存照片
+                                input(type="url" ng-model="settings.otherData.photo" aria-label="remained photo" disabled)
+                        div(layout="column")
+                            md-input-container
+                                label 備註
+                                input(type="text" ng-model="settings.otherData.notes" aria-label="all other else about accident" disabled)
     div(layout="column" layout-align="center")
         md-button(class="md-primary" ng-click="goApp('home')" aria-label="return" style="min-width:200px;") 回上一頁

@@ -1,6 +1,125 @@
 
 <div ng-controller="RecordCtrl">
-  <div flex="flex" layout="row" layout-align="center"></div>
+  <div flex="flex" layout="row" layout-align="center">
+    <md-tabs md-dynamic-height="md-dynamic-height" md-selected="tabSelected" style="width:80%; margin-top:3%; margin-left:10%; margin-right:10%;" flex="flex">
+      <md-tab id="tab1">
+        <md-tab-label>Identity</md-tab-label>
+        <md-tab-body>
+          <h3>雙方身分</h3>
+          <div>
+            <div layout="column">
+              <md-input-container>
+                <label>你的車牌號碼</label>
+                <input type="text" ng-model="settings.identity.myPlate" aria-label="my license plate" disabled="disabled"/>
+              </md-input-container>
+            </div>
+            <div layout="column">
+              <md-input-container>
+                <label>對方車牌號碼</label>
+                <input type="text" ng-model="settings.identity.otherPlate" aria-label="other license plate" disabled="disabled"/>
+              </md-input-container>
+            </div>
+          </div>
+        </md-tab-body>
+      </md-tab>
+      <md-tab id="tab2">
+        <md-tab-label>Condition</md-tab-label>
+        <md-tab-body>
+          <h3>雙方行為</h3>
+          <div>
+            <div layout="column">
+              <md-input-container>
+                <label>事故地點</label>
+                <input type="text" ng-model="settings.condition.place" aria-label="accident place" disabled="disabled"/>
+              </md-input-container>
+            </div>
+            <div layout="column">
+              <md-input-container>
+                <label>事故日期</label>
+                <input type="text" ng-model="settings.condition.date" disabled="disabled"/>
+              </md-input-container>
+            </div>
+            <div layout="column">
+              <md-input-container>
+                <label>事故時間</label>
+                <input type="text" format="HH:mm" ng-model="settings.condition.time" disabled="disabled"/>
+              </md-input-container>
+            </div>
+            <div layout="column">
+              <md-input-container>
+                <label>對方駕駛行為</label>
+                <input type="text" ng-model="settings.condition.otherBehavior" aria-label="other behavior" disabled="disabled"/>
+              </md-input-container>
+            </div>
+            <div layout="column">
+              <md-input-container>
+                <label>本身採取動作</label>
+                <input type="text" ng-model="settings.condition.myBehavior" aria-label="my behavior" disabled="disabled"/>
+              </md-input-container>
+            </div>
+            <div layout="column">
+              <md-input-container>
+                <label>雙方車速車況</label>
+                <input type="text" ng-model="settings.condition.speed" aria-label="speed" disabled="disabled"/>
+              </md-input-container>
+            </div>
+          </div>
+        </md-tab-body>
+      </md-tab>
+      <md-tab id="tab3">
+        <md-tab-label>Road</md-tab-label>
+        <md-tab-body>
+          <h3>外在狀況</h3>
+          <div>
+            <div layout="column">
+              <md-input-container>
+                <label>實際道路狀況</label>
+                <input type="text" ng-model="settings.extFactor.road" aria-label="road condition" disabled="disabled"/>
+              </md-input-container>
+            </div>
+            <div layout="column">
+              <md-input-container>
+                <label>號誌與標線情形</label>
+                <input type="text" ng-model="settings.extFactor.sign" aria-label="road sign" disabled="disabled"/>
+              </md-input-container>
+            </div>
+          </div>
+        </md-tab-body>
+      </md-tab>
+      <md-tab id="tab4">
+        <md-tab-label>Result</md-tab-label>
+        <md-tab-body>
+          <h3>事件結果</h3>
+          <div>
+            <div layout="column">
+              <md-input-container>
+                <label>車輛損壞、人員受傷情形</label>
+                <input type="text" ng-model="settings.result.broken" aria-label="broken result" disabled="disabled"/>
+              </md-input-container>
+            </div>
+            <div layout="column">
+              <md-input-container>
+                <label>其他密切狀況</label>
+                <input type="text" ng-model="settings.result.otherCond" aria-label="all other else" disabled="disabled"/>
+              </md-input-container>
+            </div>
+            <div layout="column">
+              <md-input-container>
+                <label>留存照片</label>
+                <input type="url" ng-model="settings.otherData.photo" aria-label="remained photo" disabled="disabled"/>
+              </md-input-container>
+            </div>
+            <div layout="column">
+              <md-input-container>
+                <label>備註</label>
+                <input type="text" ng-model="settings.otherData.notes" aria-label="all other else about accident" disabled="disabled"/>
+              </md-input-container>
+            </div>
+          </div>
+        </md-tab-body>
+      </md-tab>
+    </md-tabs>
+  </div>
   <div layout="column" layout-align="center">
     <md-button ng-click="goApp('home')" aria-label="return" style="min-width:200px;" class="md-primary">回上一頁</md-button>
   </div>
