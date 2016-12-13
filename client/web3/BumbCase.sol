@@ -34,10 +34,12 @@ contract BumbCase {
     uint NumberOfCase = 0;
     address thisbumb ;
     mapping(address => bumbcase) bumbcases;
+    function BumbCase(){
+        thisbumb = msg.sender;
+    }
     
     function NewCase(uint _id, string _myPlate, string _otherPlate, string _condition, string _date,string _time, string _place,string _otherBehavior,string _myBehavior,uint _speed, string _road, string _sign,string _broken,string _otherCond, string _photo,string _notes){
         NumberOfCase += 1;
-        thisbumb = msg.sender ;
         
         bumbcases[thisbumb].id = _id ; 
         bumbcases[thisbumb].recordNum = NumberOfCase ; 

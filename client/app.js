@@ -34,148 +34,44 @@ http.listen(process.env.PORT || 3000, function() {
     console.log('listening on *:3000');
 });
 */
-http.listen(3030);
+http.listen(3000);
 
 
 app.get('/userdata', function(req, res){
-    var user = req.query.id;
-    user = web3.eth.accounts[0];
-    bumbcase.returnid({
-        from: user
-    }, function(err, rid) {
-        if(!err) {
-            bumbcase.returnrecordNum({
-                from: user
-            }, function(err, rrecordNum) {
-                if(!err) {
-                    bumbcase.returnmyPlate({
-                        from: user
-                    }, function(err,rmyPlate) {
-                        if(!err) {
-                            bumbcase.returnotherPlate({
-                                from: user
-                            }, function(err, rotherPlate) {
-                                if(!err) {
-                                    bumbcase.returncondition({
-                                        from: user
-                                    }, function(err, rcondition) {
-                                        if(!err) {
-                                            bumbcase.returndate({
-                                                from: user
-                                            }, function(err, rdate) {
-                                                if(!err) {
-                                                    bumbcase.returntime({
-                                                        from: user
-                                                    }, function(err, rtime) {
-                                                        if(!err) {
-                                                            bumbcase.returnplace({
-                                                                from: user
-                                                            }, function(err, rplace) {
-                                                                if(!err) {
-                                                                    bumbcase.returnotherBehavior({
-                                                                        from: user
-                                                                    }, function(err, rotherBehavior) {
-                                                                        if(!err) {
-                                                                            bumbcase.returnmyBehavior({
-                                                                                from: user
-                                                                            }, function(err, rmyBehavior) {
-                                                                                if(!err) {
-                                                                                    bumbcase.returnspeed({
-                                                                                        from: user
-                                                                                    }, function(err, rspeed) {
-                                                                                        if(!err) {
-                                                                                            bumbcase.returnroad({
-                                                                                                from: user
-                                                                                            }, function(err, rroad) {
-                                                                                                if(!err) {
-                                                                                                    bumbcase.returnsign({
-                                                                                                        from: user
-                                                                                                    }, function(err, rsign) {
-                                                                                                        if(!err) {
-                                                                                                            bumbcase.returnbroken({
-                                                                                                                from: user
-                                                                                                            }, function(err, rbroken) {
-                                                                                                                if(!err) {
-                                                                                                                    bumbcase.returnotherCond({
-                                                                                                                        from: user
-                                                                                                                    }, function(err, rotherCond) {
-                                                                                                                        if(!err) {
-                                                                                                                            bumbcase.returnphoto({
-                                                                                                                                from: user
-                                                                                                                            }, function(err, rphoto) {
-                                                                                                                                if(!err) {
-                                                                                                                                    bumbcase.returnnotes({
-                                                                                                                                        from: user
-                                                                                                                                    }, function(err, rnotes) {
-                                                                                                                                        if(!err) {
-                                                                                                                                            res.json({
-                                                                                                                                                id: rid,
-                                                                                                                                                recordNum: rrecordNum,
-                                                                                                                                                identity: {
-                                                                                                                                                    myPlate: rmyPlate,
-                                                                                                                                                    otherPlate: rotherPlate
-                                                                                                                                                },
-                                                                                                                                                condition: {
-                                                                                                                                                    date: rdate,
-                                                                                                                                                    time: rtime,
-                                                                                                                                                    place: rplace,
-                                                                                                                                                    otherBehavior: rotherBehavior,
-                                                                                                                                                    myBehavior: rmyBehavior,
-                                                                                                                                                    speed: rspeed
-                                                                                                                                                },
-                                                                                                                                                extFactor: {
-                                                                                                                                                    road: rroad,
-                                                                                                                                                    sign: rsign
-                                                                                                                                                },
-                                                                                                                                                result: {
-                                                                                                                                                    broken: rbroken,
-                                                                                                                                                    otherCond: rotherCond
-                                                                                                                                                },
-                                                                                                                                                otherData: {
-                                                                                                                                                    photo: rphoto,
-                                                                                                                                                    notes: rnotes
-                                                                                                                                                }
-                                                                                                                                            })
-                                                                                                                                        }
-                                                                                                                                    })
-                                                                                                                                }
-                                                                                                                            })
-                                                                                                                        }
-                                                                                                                    })
-                                                                                                                }
-                                                                                                            })
-                                                                                                        }
-                                                                                                    })
-                                                                                                }
-                                                                                            })
-                                                                                        }
-                                                                                    })
-                                                                                }
-                                                                            })
-                                                                        }
-                                                                    })
-                                                                }
-                                                            })
-                                                        }
-                                                    })
-                                                }
-                                            })
-                                        }
-                                    })
-                                }
-                            })
-                        }
-                    })
-                }
-            })
+    var user = web3.eth.accounts[0];
+    res.json({
+        id: bumbcase.returnid,
+        recordNum: bumbcase.returnrecordNum,
+        identity: {
+            myPlate: bumbcase.returnmyPlate,
+            otherPlate: bumbcase.returnotherPlate
+        },
+        condition: {
+            date: bumbcase.returndate,
+            time: bumbcase.returntime,
+            place: bumbcase.returnplace,
+            otherBehavior: bumbcase.returnotherBehavior,
+            myBehavior: bumbcase.returnmyBehavior,
+            speed: bumbcase.returnspeed
+        },
+        extFactor: {
+            road: bumbcase.returnroad,
+            sign: bumbcase.returnsign
+        },
+        result: {
+            broken: bumbcase.returnbroken,
+            otherCond: bumbcase.returnotherCond
+        },
+        otherData: {
+            photo: bumbcase.returnphoto,
+            notes: bumbcase.returnnotes
         }
     });
 });
 
 app.post('/postdata', function(req, res) {
-    var user = req.query.id;
-    user = web3.eth.accounts[0];
-    bumbcase.NewCase(user, req.query.myPlate, req.query.otherPlate, req.query.condition, req.query.date, req.query.time, req.query.place, req.query.otherBehavior, req.query.myBehavior, req.query.speed, req.query.road, req.query.sign, req.query.broken, req.query.otherCond, req.query.photo, req.query.notes, {
+    var user = web3.eth.accounts[0];
+    bumbcase.NewCase(user, req.body.identity.myPlate, req.body.identity.otherPlate, req.body.condition, req.body.condition.date, req.body.condition.time, req.body.condition.place, req.body.condition.otherBehavior, req.body.condition.myBehavior, req.body.condition.speed, req.body.extFactor.road, req.body.extFactor.sign, req.body.result.broken, req.body.result.otherCond, req.body.otherData.photo, req.body.otherData.notes, {
         from: user,
         gas: 4600000
     }, function(err, txhash) {

@@ -43,9 +43,25 @@ angular.module('policeApp')
             $scope.tabSelected = 3;
             $scope.fourDisabled = false;
         };
+        
+        $scope.podata = function (settings) {
+            $http({
+                url: '/postdata',
+                method: 'POST',
+                data: settings
+            })
+            .success(function (res) {
+                console.log('res:');
+                console.log(res);
+            })
+            .error(function (e) {
+                console.log('Error:');
+                console.log(e);
+            });
+        };
 
         $scope.done = function() {
-            var settings = {
+            $scope.allSettings = {
                 id: $scope.id,
                 recordNum: $scope.recordNum,
                 identity: {
@@ -74,22 +90,9 @@ angular.module('policeApp')
                 }
             };
 
-            $http({
-                url: '/postdata',
-                method: 'POST',
-                data: settings
-            })
-            .success(function (res) {
-                console.log('res:');
-                console.log(res);
-            })
-            .error(function (e) {
-                console.log('Error:');
-                console.log(e);
-            });
-
+            $scope.podata($scope.allSettings);
             console.log('done');
-            console.log(settings);
+            console.log($scope.allSettings);
             $scope.goApp('home');
         };
 
