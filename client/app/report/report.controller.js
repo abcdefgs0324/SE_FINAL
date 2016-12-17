@@ -1,3 +1,5 @@
+/*global nowUser:true*/
+
 'use strict';
 
 angular.module('policeApp')
@@ -8,8 +10,6 @@ angular.module('policeApp')
         $scope.threeDisabled = true;
         $scope.fourDisabled = true;
 
-        $scope.id = "0"; // temp
-        $scope.recordNum = "0"; // temp
         $scope.myPlate = "";
         $scope.otherPlate = "";
         $scope.place = "";
@@ -62,15 +62,14 @@ angular.module('policeApp')
 
         $scope.done = function() {
             $scope.allSettings = {
-                id: $scope.id,
-                recordNum: $scope.recordNum,
+                address: nowUser.address,
                 identity: {
                     myPlate: $scope.myPlate,
                     otherPlate: $scope.otherPlate
                 },
                 condition: {
-                    date: $scope.date,
-                    time: $scope.time,
+                    date: $scope.date.toString(),
+                    time: $scope.time.toString(),
                     place: $scope.place,
                     otherBehavior: $scope.otherBehavior,
                     myBehavior: $scope.myBehavior,
