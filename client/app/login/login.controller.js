@@ -11,7 +11,7 @@ angular.module('policeApp')
             for (var index in loginList) {
                 if ($scope.username === loginList[index].username && 
                     $scope.password === loginList[index].password) {
-                    nowUser = $scope.username;
+                    nowUser = loginList[index];
                     console.log('Success: log in with ' + nowUser);
                     loginSuccess = true;
                     $scope.goApp('home');

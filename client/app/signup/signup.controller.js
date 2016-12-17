@@ -21,10 +21,10 @@ angular.module('policeApp')
                     cellphone: $scope.newPhone,
                     address: addressList[loginList.length]
                 };
-                nowUser = $scope.username;
                 console.log('Success: create a new user');
                 console.log(newUser);
                 loginList.push(newUser);
+                nowUser = newUser;
                 $scope.goApp('home');
             } else {
                 dialog.alert('Failed', 'This user name already exists');
