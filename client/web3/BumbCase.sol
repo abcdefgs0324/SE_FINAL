@@ -10,7 +10,6 @@ contract BumbCase {
         //identity
         string myPlate;
         string otherPlate;
-        string condition;
         string date;
         string time;
         string place;
@@ -32,13 +31,13 @@ contract BumbCase {
     }
 
     uint NumberOfCase = 0;
-    address thisbumb ;
+    address public thisbumb ;
     mapping(address => bumbcase) bumbcases;
     function BumbCase(){
         thisbumb = msg.sender;
     }
     
-    function NewCase(uint _id, string _myPlate, string _otherPlate, string _condition, string _date,string _time, string _place,string _otherBehavior,string _myBehavior,uint _speed, string _road, string _sign,string _broken,string _otherCond, string _photo,string _notes){
+    function NewCase(uint _id, string _myPlate, string _otherPlate, string _date,string _time, string _place,string _otherBehavior,string _myBehavior,uint _speed, string _road, string _sign,string _broken,string _otherCond, string _photo,string _notes){
         NumberOfCase += 1;
         
         bumbcases[thisbumb].id = _id ; 
@@ -46,7 +45,6 @@ contract BumbCase {
        
         bumbcases[thisbumb].myPlate = _myPlate;
         bumbcases[thisbumb].otherPlate = _otherPlate;
-        bumbcases[thisbumb].condition = _condition;
         bumbcases[thisbumb].date = _date;
         bumbcases[thisbumb].time = _time;
         bumbcases[thisbumb].place = _place;
@@ -81,10 +79,6 @@ contract BumbCase {
 
     function returnotherPlate() returns(string){
         return bumbcases[msg.sender].otherPlate;
-    }
-    
-    function returncondition() returns(string){
-        return bumbcases[msg.sender].condition;
     }
     
     function returndate() returns(string){
