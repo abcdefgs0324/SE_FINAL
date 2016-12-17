@@ -18,6 +18,9 @@
           <md-icon class="md-primary fa fa-phone"></md-icon>
           <input type="text" ng-model="newPhone"/>
         </md-input-container>
+      </div>
+      <div flex="flex" layout-align="center">
+        <md-button ng-click="goApp('login')" class="md-primary">回上一頁</md-button>
         <md-button ng-if="!logging" ng-click="signup()" class="md-primary">註冊</md-button>
       </div>
     </div>
