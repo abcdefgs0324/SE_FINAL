@@ -21,8 +21,8 @@
             </div>
           </div>
           <div flex="flex" layout-align="center">
-            <md-button ng-click="goApp('home')" class="md-raised">回上一頁</md-button>
-            <md-button ng-click="stepTwo()" class="md-raised">下一步</md-button>
+            <md-button class="md-raised" ng-click="goApp('home')">回上一頁</md-button>
+            <md-button class="md-raised" ng-click="stepTwo()">下一步</md-button>
           </div>
         </md-tab-body>
       </md-tab>
@@ -40,13 +40,13 @@
             <div layout="column">
               <md-input-container>
                 <label>事故日期</label>
-                <input time="false" date="true" mdc-datetime-picker="" type="text" ng-model="date" disabled="disabled" class=" md-input"/>
+                <input class=" md-input" time="false" date="true" mdc-datetime-picker="" type="text" ng-model="date" disabled="disabled"/>
               </md-input-container>
             </div>
             <div layout="column">
               <md-input-container>
                 <label>事故時間</label>
-                <input mdc-datetime-picker="" date="false" time="true" type="text" format="HH:mm" ng-model="time" class=" md-input"/>
+                <input class=" md-input" mdc-datetime-picker="" date="false" time="true" type="text" format="HH:mm" ng-model="time"/>
               </md-input-container>
             </div>
             <div layout="column">
@@ -69,8 +69,8 @@
             </div>
           </div>
           <div flex="flex" layout-align="center">
-            <md-button ng-click="stepOne()" class="md-raised">上一步</md-button>
-            <md-button ng-click="stepThree()" class="md-raised">下一步</md-button>
+            <md-button class="md-raised" ng-click="stepOne()">上一步</md-button>
+            <md-button class="md-raised" ng-click="stepThree()">下一步</md-button>
           </div>
         </md-tab-body>
       </md-tab>
@@ -93,8 +93,8 @@
             </div>
           </div>
           <div flex="flex" layout-align="center">
-            <md-button ng-click="stepTwo()" class="md-raised">上一步</md-button>
-            <md-button ng-click="stepFour()" class="md-raised">下一步</md-button>
+            <md-button class="md-raised" ng-click="stepTwo()">上一步</md-button>
+            <md-button class="md-raised" ng-click="stepFour()">下一步</md-button>
           </div>
         </md-tab-body>
       </md-tab>
@@ -129,8 +129,8 @@
             </div>
           </div>
           <div flex="flex" layout-align="center">
-            <md-button ng-click="stepThree()" class="md-raised">上一步</md-button>
-            <md-button ng-click="done()" class="md-raised">完成筆錄</md-button>
+            <md-button class="md-raised" ng-click="stepThree()">上一步</md-button>
+            <md-button class="md-raised" ng-click="done()">完成筆錄</md-button>
           </div>
         </md-tab-body>
       </md-tab>
