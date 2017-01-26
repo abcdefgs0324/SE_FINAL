@@ -1,6 +1,6 @@
 var gulp = require('gulp'),
     connect = require('gulp-connect'),
-    jade = require('gulp-jade'),
+    pug = require('gulp-pug'),
     jshint = require('gulp-jshint'),
     exec = require('child_process').exec,
     sass = require('gulp-sass');
@@ -10,17 +10,17 @@ gulp.task('hello', function() {
     console.log('Hello Gulp.js');
 });
 
-gulp.task('jadeIndex', function() {
-    return gulp.src('client/views/*.jade')
-        .pipe(jade({
+gulp.task('pugIndex', function() {
+    return gulp.src('client/views/*.pug')
+        .pipe(pug({
             pretty: true
         }))
         .pipe(gulp.dest('client/'));
 });
 
-gulp.task('jadeOther', function() {
-    return gulp.src('client/views/*/*.jade')
-        .pipe(jade({
+gulp.task('pugOther', function() {
+    return gulp.src('client/views/*/*.pug')
+        .pipe(pug({
             pretty: true
         }))
         .pipe(gulp.dest('client/app/'));
@@ -40,8 +40,8 @@ gulp.task('styles', function() {
 
 gulp.task('watch', function() {
     gulp.watch('client/static/scss/*.scss', ['styles']);
-    gulp.watch('client/views/*.jade', ['jadeIndex']);
-    gulp.watch('client/views/*/*.jade', ['jadeOther']);
+    gulp.watch('client/views/*.pug', ['pugIndex']);
+    gulp.watch('client/views/*/*.pug', ['pugOther']);
 });
 
 gulp.task('serve', function(cb) {
@@ -53,7 +53,7 @@ gulp.task('serve', function(cb) {
     });
 });
 
-gulp.task('jade', ['jadeIndex', 'jadeOther']);
-gulp.task('run', ['jadeIndex', 'jadeOther', 'serve']);
+gulp.task('pug', ['pugIndex', 'pugOther']);
+gulp.task('run', ['pugIndex', 'pugOther', 'serve']);
 
 
