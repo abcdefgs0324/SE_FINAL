@@ -7,10 +7,6 @@ var gulp = require('gulp'),
     pump = require('pump');
  
 
-gulp.task('hello', function() {
-    console.log('Hello Gulp.js');
-});
-
 gulp.task('pugIndex', function(cb) {
     pump([
             gulp.src('client/views/*.pug'),
