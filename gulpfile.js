@@ -4,6 +4,8 @@ var gulp = require('gulp'),
     jshint = require('gulp-jshint'),
     exec = require('child_process').exec,
     sass = require('gulp-sass'),
+    uglify = require('gulp-uglify'),
+    concat = require('gulp-concat'),
     pump = require('pump');
  
 
@@ -42,6 +44,23 @@ gulp.task('styles', function(cb) {
             gulp.src('client/static/scss/*.scss'),
             sass(),
             gulp.dest('client/static/css/')
+        ],
+        cb
+    );
+});
+
+gulp.task('compress', function(cb) {
+    pump([
+            gulp.src([
+                'client/app.js',
+                'client/app/app.js',
+                'client/app/**/*.js',
+                'client/function/**/*.js',
+                'client/web3/*.js'
+            ]),
+            concat('all.js'),
+            uglify(),
+            gulp.dest('./dist/')
         ],
         cb
     );
