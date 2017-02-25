@@ -72,6 +72,15 @@ gulp.task('watch', function() {
     gulp.watch('client/views/*/*.pug', ['pugOther']);
 });
 
+gulp.task('geth', function(cb) {
+    exec('geth --identity "team9" --rpc --rpcaddr "0.0.0.0" --rpccorsdomain "*" --port "30303" --nodiscover --rpcapi "admin,personal,debug,eth,net,web3" --networkid 1900 --nat "any" --maxpeers 6 --autodag --mine --minerthreads 2', function(err) {
+        if (err) {
+            return cb(err);
+        }
+        cb();
+    });
+});
+
 gulp.task('serve', function(cb) {
     exec('node client/app.js', function(err) {
         if (err) {
@@ -82,6 +91,6 @@ gulp.task('serve', function(cb) {
 });
 
 gulp.task('pug', ['pugIndex', 'pugOther']);
-gulp.task('run', ['pugIndex', 'pugOther', 'serve']);
+gulp.task('run', ['pugIndex', 'pugOther', 'geth', 'serve']);
 
 
